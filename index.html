@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="center">
+      <h1>NASA Pic of the Day API</h1>
+      <div class="row">
+        <article class="col-2">
+          <label for="nasaImage">Search a date: </label>
+          <input type="date" id="dateInput" /><br /><br /><br />
+
+          <img src="" id="image" class="image" />
+          <iframe src="" frameborder="0" id="video"></iframe>
+        </article>
+
+        <article class="col-2">
+          <h1 id="imageTitle"></h1>
+          <h2 id="imageDate"></h2>
+          <h3 id="explanation"></h3>
+        </article>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script>
+
+    <script>
+      const center = popmotion.styler(document.querySelector(".center"));
+      const divElements = document.querySelector(".inner");
+    </script>
+  </body>
+</html>
