@@ -22,6 +22,12 @@ const nasaData = (json) => {
     video.style.display = "none";
   } else {
     explanation.innerHTML =
+    title.innerHTML = "Title: ERROR";
+    date.innerHTML = "Date: ERROR";
+    explanation.innerHTML = "Description: ERROR";
+    image.src = null;
+    image.style.display = null;
+    video.style.display = null;
       "You're looking too into the future, choose something within our timeline :(";
   }
 };
