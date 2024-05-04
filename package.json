@@ -1,0 +1,16 @@
+{
+  "name": "nasapicoftheday",
+  "version": "1.0.0",
+  "description": "A fun little exploration into the vast amounts of images that we have the privilege of seeing with the help of NASA.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

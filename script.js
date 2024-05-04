@@ -4,6 +4,8 @@ let date = document.getElementById("imageDate");
 let explanation = document.getElementById("explanation");
 let video = document.getElementById("video");
 let image = document.getElementById("image");
+import config from './config';
+const apiKey = config.apiKey;
 
 const nasaData = (json) => {
   if (json.media_type === "video") {
@@ -34,7 +36,7 @@ const nasaData = (json) => {
 dateInput.onchange = function (e) {
   var dateStr = e.target.value;
   fetch(
-    `https://api.nasa.gov/planetary/apod?api_key=17cBeyBY26TKmYBSq6BO6xNjnEduRiqQgyyjaJia&&date=${dateStr}`
+    `https://api.nasa.gov/planetary/apod?api_key=apiKey&&date=${dateStr}`
   )
     .then((response) => response.json())
     .then((data) => nasaData(data))
