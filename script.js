@@ -36,7 +36,7 @@ const nasaData = (json) => {
 dateInput.onchange = function (e) {
   var dateStr = e.target.value;
   fetch(
-    `https://api.nasa.gov/planetary/apod?api_key=apiKey&&date=${dateStr}`
+    `apiKey`
   )
     .then((response) => response.json())
     .then((data) => nasaData(data))

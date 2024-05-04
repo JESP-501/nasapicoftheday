@@ -1,5 +1,5 @@
 const config = {
-    apiKey: 17cBeyBY26TKmYBSq6BO6xNjnEduRiqQgyyjaJia
+    apiKey: https://api.nasa.gov/planetary/apod?api_key=17cBeyBY26TKmYBSq6BO6xNjnEduRiqQgyyjaJia&&date=${dateStr}
 };
 
 export default config;
