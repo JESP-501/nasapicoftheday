@@ -34,13 +34,13 @@ const nasaData = (json) => {
   }
 };
 dateInput.onchange = function (e) {
-  var dateStr = e.target.value;
-  fetch(
-    `apiKey`
-  )
-    .then((response) => response.json())
-    .then((data) => nasaData(data))
-    .catch((error) => {
-      console.debug(error);
-    });
-};
+    var dateStr = e.target.value;
+    fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
+    )
+      .then((response) => response.json())
+      .then((data) => nasaData(data))
+      .catch((error) => {
+        console.debug(error);
+      });
+  };
