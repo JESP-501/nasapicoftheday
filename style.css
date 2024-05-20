@@ -18,12 +18,12 @@
   }
 
   
-  body {
+  .body {
     font-family: HK Grotesk;
     background-color: var(--color-bg);
   }
   
-  image {
+  .image {
     display: block;
     margin-left: auto;
     margin-right: auto;

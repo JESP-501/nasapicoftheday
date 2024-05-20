@@ -1,46 +1,38 @@
-let dateInput = document.getElementById("dateInput");
-let title = document.getElementById("imageTitle");
-let date = document.getElementById("imageDate");
-let explanation = document.getElementById("explanation");
-let video = document.getElementById("video");
-let image = document.getElementById("image");
-import config from './config';
-const apiKey = config.apiKey;
+const dateInput = document.getElementById("dateInput");
+const title = document.getElementById("imageTitle");
+const date = document.getElementById("imageDate");
+const Description = document.getElementById("Description");
+const video = document.getElementById("video");
+const image = document.getElementById("image");
 
 const nasaData = (json) => {
   if (json.media_type === "video") {
     title.innerHTML = "Title: " + json.title;
     date.innerHTML = "Date:" + json.date;
-    explanation.innerHTML = "Description: " + json.explanation;
+    Description.innerHTML = "Description: " + json.Description;
     video.src = json.url;
     video.style.display = "block";
     image.style.display = "none";
   } else if (json.media_type === "image") {
     title.innerHTML = "Title: " + json.title;
     date.innerHTML = "Date: " + json.date;
-    explanation.innerHTML = "Description: " + json.explanation;
+    Description.innerHTML = "Description: " + json.Description;
     image.src = json.url;
     image.style.display = "block";
     video.style.display = "none";
   } else {
-    explanation.innerHTML =
-    title.innerHTML = "Title: ERROR";
-    date.innerHTML = "Date: ERROR";
-    explanation.innerHTML = "Description: ERROR";
-    image.src = null;
-    image.style.display = null;
-    video.style.display = null;
-      "You're looking too into the future, choose something within our timeline :(";
+    console.debug("You're looking too far into the future, choose something within our timeline :(");
   }
 };
+
 dateInput.onchange = function (e) {
-    var dateStr = e.target.value;
-    fetch(
-      `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
-    )
-      .then((response) => response.json())
-      .then((data) => nasaData(data))
-      .catch((error) => {
-        console.debug(error);
-      });
-  };
+  const dateStr = e.target.value;
+  fetch(
+    `https://api.nasa.gov/planetary/apod?api_key=7lHKRGKsjkAwdl2I0PBEBsQtmIKTwgJhuZGHZaUa&&date=${dateStr}`
+  )
+    .then((response) => response.json())
+    .then((data) => nasaData(data))
+    .catch((error) => {
+      console.debug(error);
+    });
+};
